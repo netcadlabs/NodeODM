@@ -33,3 +33,8 @@ jobs:
         platforms: linux/amd64
         push: true
         tags: dronet/nodeodm:latest
+        # Trigger WebODM build
+    - name: Dispatch WebODM Build Event
+      id: webodm_dispatch
+      run: |
+        curl -X POST -u "${{secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/netcadlabs/WebODM/actions/workflows/build-and-publish.yml/dispatches --data '{"ref": "master"}'
