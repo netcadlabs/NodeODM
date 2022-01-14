@@ -1,5 +1,5 @@
-FROM opendronemap/odm:latest
-MAINTAINER Piero Toffanin <pt@masseranolabs.com>
+FROM dronet/odm:latest
+LABEL maintainer="Omer Kalkan <omerkalkan@netcad.com>"
 
 EXPOSE 3000
 
